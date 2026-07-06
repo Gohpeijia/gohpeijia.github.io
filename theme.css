@@ -1,0 +1,316 @@
+/*bright mode*/
+/*menu colour, but still can add/change(navbar) if yall use other colours*/
+:root {
+  --brown-dark:    #1e110b;
+  --brown-mid:     #5C3317;
+  --brown-light:   #7B4A2D;
+  --gold:          #F5C842;
+  --gold-light:    #FAE095;
+  --success:       #518c2b;
+  --cream:         #F5ECD7;
+  --white:         #FFFFFF;
+  --text-muted:    #7B5B3A;
+  --glow-dark:     #3D1C02;
+  --glow-light:    #8B4513;
+  --radius-sm:     8px;
+  --radius-md:     12px;
+  --radius-lg:     20px;
+  --transition:    0.3s ease;
+}
+
+/* ---------- RESET ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI';
+  background: var(--cream);
+  color: var(--brown-dark);
+}
+
+/* =============================================
+   NAVBAR 
+   i simply just a template, can change/add if yall want to use other colours or add more elements
+   ============================================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--brown-dark);
+  padding: 16px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: opacity var(--transition);
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons button {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.nav-icons button:hover {
+  opacity: 0.7;
+}
+
+/* =============================================
+   GLOBAL UTILITIES & ANIMATIONS
+   ============================================= */
+
+/* 1. Add this class to any text element you want to have the sweep effect */
+.hover-underline {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* 2. The invisible line waiting underneath */
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  bottom: -2px;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* 3. Sweeps in when you hover over the text itself */
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 4. Sweeps in if you hover over a parent container (like your cake cards) */
+.card-hover-trigger:hover .hover-underline::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+/* from fonts.css*/
+/*whole body colour*/
+body{
+    background-color:#F8F5E8;
+}
+
+/*navigation bar word font*/
+.nav_fonts{
+    font-size: 18px;
+    font-style: Helvetica;
+    font-weight: bold;
+    z-index:1001;
+
+}
+
+/*search login icon*/
+.icons{
+    width: 30px;
+    height: 30px;
+    z-index:1001;
+}
+
+/*big title infront of video*/
+.video_text h1{
+    margin: 0 0 30px 0;
+    text-align: center;
+    color: white;   
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(2rem, 6vw, 5rem);
+    letter-spacing: 6px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+/*"explore now" below title in video*/
+.video_text {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align:center;
+    z-index: 1001;
+}
+
+/*explore now button*/
+.explore_button{
+    position: relative;
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border: 2px solid white;
+    border-radius: 50px;
+
+    color: white;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    z-index: 2000;
+
+}
+.explore_button span{
+    position: relative;
+    z-index: 2;
+    color:white;
+}
+.explore_button::before{
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;    
+
+    width: 0%;
+    height: 100%;
+
+    background: white;
+
+    transition: width 0.5s ease;
+
+    z-index: -1;
+}
+.explore_button:hover::before{
+    width: 100%;
+}
+.explore_button:hover span{
+    color: #8B6B20;
+}
+
+/*line at footer*/
+.divider{
+    height: 5px;
+    background-color: #8B6B20;
+    border:none;
+}
+
+/*footer contents*/
+.footer_index_center{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top:30px;
+    margin-left:80px;
+}
+.footer_index_center h2{
+    font-weight: bold;
+    color:#6E5315;
+    
+}
+.footer_index_center ul{
+    padding-left: 20px;
+    margin: 0;
+    
+}
+.footer_index_center li{
+    margin-bottom: 15px;
+}
+.footer_index_center a{
+    text-decoration: none;
+    color: #8B6B20;
+    align-self:auto;
+}
+
+
+/*footer bottom left small copyright words*/
+.copyright{
+    margin-left:20px;
+    margin-top: 80px;
+}
+
+/*for phones */
+@media (max-width:768px){
+
+    .explore_button{
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width:600px){
+
+  
+    .video_text h1{
+        font-size: 1.5rem;
+        letter-spacing:2px;
+    }
+
+   
+    .explore_button{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .icons{
+    width: 24px;
+    height: 24px;
+    z-index:1001;
+}
+}
+
+/* below are all login page fonts */
+.login_content{
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+}
+
+.login_content h1{
+    font-weight: bold;
+    margin-bottom:0px;
+}
+
+.forgotpw{
+    font-style: italic;
+}
+
+.newuser{
+    font-style: times-new-roman;
+}
+
+
+
+
+
+
+/*dark mode*/
+
+body.dark-mode{
+    background-color:#1b1b1b;
+    color:#F5ECD7;
+}
